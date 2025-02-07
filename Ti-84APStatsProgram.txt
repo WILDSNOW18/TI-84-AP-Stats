@@ -1,9 +1,12 @@
 "Variable usage: A - First Menu Option | B - Second Menu Option | C - Third Menu Option | D - Generic Answer | E - | F - | G - | H - | I - Population Size | J - Proportions Variable | K - | L - Lists| m - | n - Sample Size | o -  | p - Percentage| q - Confidence 1 | r - confidence 2 |"
+"!!Can't use Z as a variable"
+"Output uses a columns to rows, with each character taking up one space"
 
 
 
 
-lbl p1
+
+lbl a1
 Disp: "1. List Functions" 
 Disp: "2. Basic Calculations"
 Disp: "3. Unit 2 Calculations"
@@ -16,8 +19,8 @@ Disp: "9. Quit"
 
 Input "Enter Options: ", a
 
-Lbl k1
-If k = 1
+Lbl a1
+If a = 1
 Then
 Disp: "1. Create a List"
 Disp: "2. Add to List"
@@ -61,8 +64,8 @@ Then
 Goto p1 
 
 
-Lbl k2
-If k = 2
+Lbl a2
+If a = 2
 Then
 Disp: "1. Find the Mean"
 Disp: "2. Find the SD"
@@ -105,16 +108,17 @@ End
 
 
 
-If k = 3
+If a = 3
 Then
 Disp: "1.
 End
 
 
-If k = 6
+If a = 6
 Then
-Output(1,1,"1. Checks")
-Output(2,1,"2. Calc Interval)
+Disp "1. Checks"
+Disp "2. Z Intervals"
+Disp "3. Z Tests"
 Input "Enter Option: ", b
 
 If b = 1 
@@ -129,7 +133,7 @@ Then
 Input "Enter Population Size: ", i
 Input "Enter Sample Size: " , n
 End
-If N <= .1 * i
+If N <= (.1 * i)
 Then
 Disp "True"
 Else 
@@ -151,61 +155,85 @@ End
 
 If b = 2
 Then
+Disp "1: 1 Sample Proportion"
+Disp "2: 2 Sample Proportion"
+Input "Enter Option: ", C
+
+"**Test This Code**"
+
+If c = 1
+Then
+Disp " "
 Input "Enter Confidence Level: ", q
 Input "Enter Percentage: ", p
 Input "Enter Sample Size: ", n
 End
 If q = .50
 Then 
-r = .674
+0.674 -> r
+Goto p2
 End
 If q = .6
 Then
-r = .841
+0.841 -> r
+Goto p2
 End
 If q = .7
 Then
-r = 1.036
+1.035 -> r
+Goto p2
 End
 If q = .8
 Then
-r = 1.282
+1.282 -> r
+Goto p2
 End
 If q = .9
 Then
-r = 1.645
+1.645 -> r
+Goto r
 End
 If q = .95
 Then
-r = 1.96
+1.96 -> r
+Goto p2
 End
 If q = .96
 Then
-r = 2.054
+2.054 -> r
+Goto p2
 End
 If q = .98
 Then
-r = 2.326
+2.326 -> r
+Goto p2
 End
 If q = .99 
 Then 
-r = 2.576
+2.576 -> r
+Goto p2
 End
 If q = .999
 Then 
-r = 3.291
+3.291 -> r
+Goto p2
 End
-(p-(r*sqrt(p*(1-p)/n)->d
-(p+(r*sqrt(p*(1-p)/n)->e
-Output(1,1,"[")
-Output(1,2,d)
-Output(1,3,",")
-Output(1,4,e)
-Output(1,5,"]")
+
+Lbl p2
+(r*sqrt(p*(1-p)/n)->e
+
+Disp "M.E."
+Disp e
+Disp "Lower: "
+Disp p - e
+Disp "Upper: "
+Disp p + e
+End
 
 
 
-"Output uses a columns to rows, with each character taking up one space"
+
+
 
 
 
