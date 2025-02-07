@@ -313,7 +313,12 @@ End
 
 
 
-
+Lbl ZZ
+Disp "1. Again"
+Disp "0. End"
+Input "Enter Option: ", z
+While z != 0
+Goto a1
 
 
 
