@@ -7,27 +7,27 @@
 
 
 lbl a1
-Disp: "1. List Functions" 
-Disp: "2. Basic Calculations"
-Disp: "3. Unit 2 Calculations"
-Disp: "4. "
-Disp: "5. "
-Disp: "6. Proportions"
-Disp: "7. Means"
-Disp: "8. Next Page"
-Disp: "9. Quit"
+Disp:: "1. List Functions" 
+Disp:: "2. Basic Calculations"
+Disp:: "3. Unit 2 Calculations"
+Disp:: "4. "
+Disp:: "5. "
+Disp:: "6. Proportions"
+Disp:: "7. Means"
+Disp:: "8. Next Page"
+Disp:: "9. Quit"
 
 Input "Enter Options: ", a
 
-Lbl a1
+Lbl a2
 If a = 1
 Then
-Disp: "1. Create a List"
-Disp: "2. Add to List"
-Disp: "3. Remove from List"
-Disp: "4. Sort List AscEnding"
-Disp: "5. Sort List DescEnding"
-Disp: "9. Back"
+Disp:: "1. Create a List"
+Disp:: "2. Add to List"
+Disp:: "3. Remove from List"
+Disp:: "4. Sort List AscEnding"
+Disp:: "5. Sort List DescEnding"
+Disp:: "9. Back"
 End
 
 
@@ -52,7 +52,7 @@ If b = 4
 Then 
 Input "Enter List", l
 SortA(l)
-Disp:: "Done"
+Disp::: "Done"
 End
 
 If b = 5
@@ -67,11 +67,11 @@ Goto p1
 Lbl a2
 If a = 2
 Then
-Disp: "1. Find the Mean"
-Disp: "2. Find the SD"
-Disp: "3. Find the Variance"
-Disp: "4. Mass Calculate"
-Disp: "9. Back"
+Disp:: "1. Find the Mean"
+Disp:: "2. Find the SD"
+Disp:: "3. Find the Variance"
+Disp:: "4. Mass Calculate"
+Disp:: "9. Back"
 End
 
 Input "Enter Option: " , b
@@ -85,13 +85,13 @@ End
 If b = 2 
 Then
 Input "Enter List: ", l
-Disp: stdDev(l)
+Disp:: stdDev(l)
 End
 
 If b = 3
 Then
 Input "Enter List: ", l
-Disp: variance(l)
+Disp:: variance(l)
 End
 
 If b = 4
@@ -110,15 +110,15 @@ End
 
 If a = 3
 Then
-Disp: "1.
+Disp:: "1.
 End
 
 
 If a = 6
 Then
-Disp "1. Checks"
-Disp "2. Z Intervals"
-Disp "3. Z Tests"
+Disp: "1. Checks"
+Disp: "2. Z Intervals"
+Disp: "3. Z Tests"
 Input "Enter Option: ", b
 
 If b = 1 
@@ -135,9 +135,9 @@ Input "Enter Sample Size: " , n
 End
 If N <= (.1 * i)
 Then
-Disp "True"
+Disp: "True"
 Else 
-Disp "False"
+Disp: "False"
 
 
 If c =2 
@@ -147,23 +147,23 @@ Input "Enter Sample Size: ", n
 End
 If (p*n >= 10 and n*(1-p) >= 10)
 Then
-Disp: "True"
+Disp:: "True"
 Else 
-Disp: "False" 
+Disp:: "False" 
 End
 
 
 If b = 2
 Then
-Disp "1: 1 Sample Proportion"
-Disp "2: 2 Sample Proportion"
+Disp: "1: 1 Sample Proportion"
+Disp: "2: 2 Sample Proportion"
 Input "Enter Option: ", C
 
 "**Test This Code**"
 
 If c = 1
 Then
-Disp " "
+Disp: " "
 Input "Enter Confidence Level: ", q
 Input "Enter Percentage: ", p
 Input "Enter Sample Size: ", n
@@ -222,16 +222,87 @@ End
 Lbl p2
 (r*sqrt(p*(1-p)/n)->e
 
-Disp "M.E."
-Disp e
-Disp "Lower: "
-Disp p - e
-Disp "Upper: "
-Disp p + e
+Disp: "M.E."
+Disp: e
+Disp: "Lower: "
+Disp: p - e
+Disp: "Upper: "
+Disp: p + e
 End
 
 
+"Variables: q, p, r, n, m, h, i"
+If c = 2
+Then
+Disp: " "
+Input "Enter Confidence Level: ", q
+Input "Enter Percent P1: ", p
+Input "Enter SS P1", n
+Input "Enter Percent P2: ", r
+Input "Enter SS P2: ", m
 
+If q = .50
+Then 
+0.674 -> r
+Goto p2
+End
+If q = .6
+Then
+0.841 -> r
+Goto p2
+End
+If q = .7
+Then
+1.035 -> r
+Goto p2
+End
+If q = .8
+Then
+1.282 -> r
+Goto p2
+End
+If q = .9
+Then
+1.645 -> r
+Goto r
+End
+If q = .95
+Then
+1.96 -> r
+Goto p2
+End
+If q = .96
+Then
+2.054 -> r
+Goto p2
+End
+If q = .98
+Then
+2.326 -> r
+Goto p2
+End
+If q = .99 
+Then 
+2.576 -> r
+Goto p2
+End
+If q = .999
+Then 
+3.291 -> r
+Goto p2
+End
+
+lbl p3
+p - r -> h
+sqrt( ((p*(1-p))/n) + ((r*(1-r))/m))-> i
+
+Disp: "M.E.: "
+Disp: i
+Disp: "Lower Bound: "
+Disp: h - i
+Disp: "Upper Bound: "
+Disp: H+i
+End
 
 
 
