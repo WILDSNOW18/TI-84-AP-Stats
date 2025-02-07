@@ -1,4 +1,4 @@
-' Variable usage: A - First Menu Option | B - Second Menu Option | C - Third Menu Option | D - Generic Answer | E - | F - | G - | H - | I - Population Size | J - Proportions Variable | K - | L - Lists| m - | n - Sample Size | o -  | p - Percentage| q - Confidence 1 | r - confidence 2 |
+"Variable usage: A - First Menu Option | B - Second Menu Option | C - Third Menu Option | D - Generic Answer | E - | F - | G - | H - | I - Population Size | J - Proportions Variable | K - | L - Lists| m - | n - Sample Size | o -  | p - Percentage| q - Confidence 1 | r - confidence 2 |"
 
 
 
@@ -205,8 +205,7 @@ Output(1,5,"]")
 
 
 
-
-' Output uses a columns to rows, with each character taking up one space
+"Output uses a columns to rows, with each character taking up one space"
 
 
 
