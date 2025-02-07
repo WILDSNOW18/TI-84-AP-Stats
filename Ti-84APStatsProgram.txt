@@ -5,7 +5,7 @@
 
 
 
-
+"Main List 1"
 lbl a1
 Disp: "1. List Functions" 
 Disp: "2. Basic Calculations"
@@ -19,6 +19,7 @@ Disp: "9. Quit"
 
 Input "Enter Options: ", a
 
+"Sub List 1.1"
 Lbl a1
 If a = 1
 Then
@@ -29,41 +30,45 @@ Disp: "4. Sort List AscEnding"
 Disp: "5. Sort List DescEnding"
 Disp: "9. Back"
 End
-
-
 Input "Enter Option: ", b
 
+"Create a List"
 If b = 1
 Then
 
 End
 
+"Add to List"
 If b = 2
 Then 
 Input "Enter Number: ", j
 augment(L1,{j})→L1
 End
 
+"Remove From List"
 If b = 3
 Then
 End
 
+"Sort List Ascending"
 If b = 4
 Then 
 Input "Enter List", l
 SortA(l)
-Disp:: "Done"
+Disp: "Done"
 End
 
+"Sort List Descending"
 If b = 5
 Then 
 End
 
+"Return to Main Page"
 If b = 9
 Then
-Goto p1 
+Goto a1 
 
-
+"SubMenu 1.2"
 Lbl a2
 If a = 2
 Then
@@ -76,30 +81,35 @@ End
 
 Input "Enter Option: " , b
 
+"Find the Mean"
 If b = 1
 Then 
 Input "Enter List: ", l
 Mean(l)
 End
 
+"Find the SD"
 If b = 2 
 Then
 Input "Enter List: ", l
 Disp: stdDev(l)
 End
 
+"Find the Variance"
 If b = 3
 Then
 Input "Enter List: ", l
 Disp: variance(l)
 End
 
+"Mass Calculate"
 If b = 4
 Then
 Input "Enter List: ", l
 1-Var Stats l
 End
 
+"Return to Main Menu"
 If b = 9
 Then
 Goto p1 
@@ -107,13 +117,13 @@ End
 
 
 
-
+"Unit 2 Calculations"
 If a = 3
 Then
 Disp: "1.
 End
 
-
+"Proportion Calculations"
 If a = 6
 Then
 Disp "1. Checks"
@@ -121,13 +131,15 @@ Disp "2. Z Intervals"
 Disp "3. Z Tests"
 Input "Enter Option: ", b
 
+"Checks"
 If b = 1 
 Then
-Output(1,1,"10 Cond")
-Output(2,1,"LLC")
+Disp "1: 10 Cond"
+Disp "2: LLC"
 Input "Enter Option: ", c
 End
 
+"10 Percent"
 If c = 1
 Then
 Input "Enter Population Size: ", i
@@ -139,7 +151,7 @@ Disp "True"
 Else 
 Disp "False"
 
-
+"Law of Large Counts"
 If c =2 
 Then
 Input "Enter Percentage: " , p
@@ -152,7 +164,7 @@ Else
 Disp: "False" 
 End
 
-
+"Z Intervals"
 If b = 2
 Then
 Disp "1: 1 Sample Proportion"
@@ -160,7 +172,7 @@ Disp "2: 2 Sample Proportion"
 Input "Enter Option: ", C
 
 "**Test This Code**"
-
+"1 Sample Proportion"
 If c = 1
 Then
 Disp " "
