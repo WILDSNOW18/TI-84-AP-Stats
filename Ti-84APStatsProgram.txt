@@ -1,4 +1,4 @@
-"Variable usage: A - First Menu Option | B - Second Menu Option | C - Third Menu Option | D - Generic Answer | E - | F - | G - | H - | I - Population Size | J - Proportions Variable | K - | L - Lists| m - | n - Sample Size | o -  | p - Percentage| q - Confidence 1 | r - confidence 2 |"
+"Variable usage: A-First Menu Option | B-Second Menu Option | C-Third Menu Option | D-Generic Answer | E-| F-| G-| H-| I-Population Size | J-Proportions Variable | K-| L-Lists| m-| n-Sample Size | o- | p-Percentage| q-Confidence 1 | r-confidence 2 |"
 "!!Can't use Z as a variable"
 "Output uses a columns to rows, with each character taking up one space"
 
@@ -6,7 +6,7 @@
 
 
 "Main List 1"
-lbl a1
+Lbl A1
 Disp:: "1. List Functions" 
 Disp:: "2. Basic Calculations"
 Disp:: "3. Unit 2 Calculations"
@@ -17,10 +17,10 @@ Disp:: "7. Means"
 Disp:: "8. Next Page"
 Disp:: "9. Quit"
 
-Input "Enter Options: ", a
+Input "Enter Options: ", A
 
 
-If a = 1
+If A=1
 Then
 Disp:: "1. Create a List"
 Disp:: "2. Add to List"
@@ -29,49 +29,49 @@ Disp:: "4. Sort List AscEnding"
 Disp:: "5. Sort List DescEnding"
 Disp:: "9. Back"
 End
-Input "Enter Option: ", b
+Input "Enter Option: ", B
 
 "Create a List"
-If b = 1
+If B=1
 Then
 
 End
 
 "Add to List"
-If b = 2
+If B=2
 Then 
-Input "Enter Number: ", j
-augment(L1,{j})→L1
+Input "Enter Number: ", J
+augment(L1,{J})→L1
 End
 
 "Remove From List"
-If b = 3
+If B=3
 Then
 End
 
 "Sort List Ascending"
-If b = 4
+If B=4
 Then 
-Input "Enter List", l
-SortA(l)
+Input "Enter List", L
+SortA(L)
 
 Disp: "Done"
 
 End
 
 "Sort List Descending"
-If b = 5
+If B=5
 Then 
 End
 
 "Return to Main Page"
-If b = 9
+If B=9
 Then
-Goto a1 
+Goto A1 
 
 "SubMenu 1.2"
-Lbl a2
-If a = 2
+Lbl A2
+If A=2
 Then
 Disp:: "1. Find the Mean"
 Disp:: "2. Find the SD"
@@ -80,85 +80,85 @@ Disp:: "4. Mass Calculate"
 Disp:: "9. Back"
 End
 
-Input "Enter Option: " , b
+Input "Enter Option: " , B
 
 "Find the Mean"
-If b = 1
+If B=1
 Then 
-Input "Enter List: ", l
+Input "Enter List: ", L
 Mean(l)
 End
 
 "Find the SD"
-If b = 2 
+If B=2 
 Then
-Input "Enter List: ", l
+Input "Enter List: ", L
 Disp:: stdDev(l)
 End
 
 "Find the Variance"
-If b = 3
+If B=3
 Then
-Input "Enter List: ", l
+Input "Enter List: ", L
 Disp:: variance(l)
 End
 
 "Mass Calculate"
-If b = 4
+If B=4
 Then
-Input "Enter List: ", l
+Input "Enter List: ", L
 1-Var Stats l
 End
 
 "Return to Main Menu"
-If b = 9
+If B=9
 Then
-Goto p1 
+Goto P1 
 End
 
 
 
 "Unit 2 Calculations"
-If a = 3
+If A=3
 Then
 Disp:: "1.
 End
 
 "Proportion Calculations"
-If a = 6
+If A=6
 Then
 Disp: "1. Checks"
 Disp: "2. Z Intervals"
 Disp: "3. Z Tests"
-Input "Enter Option: ", b
+Input "Enter Option: ", B
 
 "Checks"
-If b = 1 
+If B=1 
 Then
 Disp "1: 10 Cond"
 Disp "2: LLC"
-Input "Enter Option: ", c
+Input "Enter Option: ", C
 End
 
 "10 Percent"
-If c = 1
+If C=1
 Then
-Input "Enter Population Size: ", i
-Input "Enter Sample Size: " , n
+Input "Enter Population Size: ", I
+Input "Enter Sample Size: " , N
 End
-If N <= (.1 * i)
+If N <= (.1 * I)
 Then
 Disp: "True"
 Else 
 Disp: "False"
 
 "Law of Large Counts"
-If c =2 
+If C=2 
 Then
-Input "Enter Percentage: " , p
-Input "Enter Sample Size: ", n
+Input "Enter Percentage: " , P
+Input "Enter Sample Size: ", N
 End
-If (p*n >= 10 and n*(1-p) >= 10)
+If (P*N >= 10 and N*(1-P) >= 10)
 Then
 Disp:: "True"
 Else 
@@ -166,7 +166,7 @@ Disp:: "False"
 End
 
 "Z Intervals"
-If b = 2
+If B=2
 Then
 Disp: "1: 1 Sample Proportion"
 Disp: "2: 2 Sample Proportion"
@@ -174,147 +174,147 @@ Input "Enter Option: ", C
 
 "**Test This Code**"
 "1 Sample Proportion"
-If c = 1
+If C=1
 Then
 Disp: " "
-Input "Enter Confidence Level: ", q
-Input "Enter Percentage: ", p
-Input "Enter Sample Size: ", n
+Input "Enter Confidence Level: ", Q
+Input "Enter Percentage: ", P
+Input "Enter Sample Size: ", N
 End
-If q = .50
+If q=.50
 Then 
-0.674 -> r
-Goto p2
+0.674->R
+Goto P2
 End
-If q = .6
+If q=.6
 Then
-0.841 -> r
-Goto p2
+0.841->R
+Goto P2
 End
-If q = .7
+If q=.7
 Then
-1.035 -> r
-Goto p2
+1.035->R
+Goto P2
 End
-If q = .8
+If q=.8
 Then
-1.282 -> r
-Goto p2
+1.282->R
+Goto P2
 End
-If q = .9
+If q=.9
 Then
-1.645 -> r
+1.645->R
 Goto r
 End
-If q = .95
+If q=.95
 Then
-1.96 -> r
-Goto p2
+1.96->R
+Goto P2
 End
-If q = .96
+If q=.96
 Then
-2.054 -> r
-Goto p2
+2.054->R
+Goto P2
 End
-If q = .98
+If q=.98
 Then
-2.326 -> r
-Goto p2
+2.326->R
+Goto P2
 End
-If q = .99 
+If q=.99 
 Then 
-2.576 -> r
-Goto p2
+2.576->R
+Goto P2
 End
-If q = .999
+If q=.999
 Then 
-3.291 -> r
-Goto p2
+3.291->R
+Goto P2
 End
 
-Lbl p2
-(r*sqrt(p*(1-p)/n)->e
+Lbl P2
+(R*sqrt(P*(1-P)/N)->E
 
 Disp: "M.E."
-Disp: e
+Disp: E
 Disp: "Lower: "
-Disp: p - e
+Disp: P-E
 Disp: "Upper: "
-Disp: p + e
+Disp: P+E
 End
 
 
 "Variables: q, p, r, n, m, h, i"
-If c = 2
+If C=2
 Then
 Disp: " "
-Input "Enter Confidence Level: ", q
-Input "Enter Percent P1: ", p
-Input "Enter SS P1", n
-Input "Enter Percent P2: ", r
-Input "Enter SS P2: ", m
+Input "Enter Confidence Level: ", Q
+Input "Enter Percent P1: ", P
+Input "Enter SS P1", N
+Input "Enter Percent P2: ", J
+Input "Enter SS P2: ", M
 
-If q = .50
+If q=.50
 Then 
-0.674 -> r
-Goto p2
+0.674->R
+Goto P3
 End
-If q = .6
+If q=.6
 Then
-0.841 -> r
-Goto p2
+0.841->R
+Goto P3
 End
-If q = .7
+If q=.7
 Then
-1.035 -> r
-Goto p2
+1.035->R
+Goto P3
 End
-If q = .8
+If q=.8
 Then
-1.282 -> r
-Goto p2
+1.282->R
+Goto P3
 End
-If q = .9
+If q=.9
 Then
-1.645 -> r
-Goto r
+1.645->R
+Goto P3
 End
-If q = .95
+If q=.95
 Then
-1.96 -> r
-Goto p2
+1.96->R
+Goto P3
 End
-If q = .96
+If q=.96
 Then
-2.054 -> r
-Goto p2
+2.054->R
+Goto P3
 End
-If q = .98
+If q=.98
 Then
-2.326 -> r
-Goto p2
+2.326->R
+Goto P3
 End
-If q = .99 
+If q=.99 
 Then 
-2.576 -> r
-Goto p2
+2.576->R
+Goto P3
 End
-If q = .999
+If q=.999
 Then 
-3.291 -> r
-Goto p2
+3.291->R
+Goto P3
 End
 
 lbl p3
-p - r -> h
-sqrt( ((p*(1-p))/n) + ((r*(1-r))/m))-> i
+P-J->H
+R*(sqrt(((P*(1-P))/N)+((J*(1-J))/M)))-> I
 
 Disp: "M.E.: "
-Disp: i
+Disp: I
 Disp: "Lower Bound: "
-Disp: h - i
+Disp: H-I
 Disp: "Upper Bound: "
-Disp: H+i
+Disp: H+I
 End
 
 
