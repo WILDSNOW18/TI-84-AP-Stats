@@ -7,6 +7,29 @@
 
 "Main List 1"
 Lbl A1
+0→A
+0→B
+0→C
+0→D
+0→E
+0→F
+0→G
+0→H
+0→I
+0→J
+0→K
+0→L
+0→M
+0→N
+0→O
+0→P
+0→Q
+0→R
+0→S
+0→T
+0→U
+0→V
+0→W
 Disp "1. List Functions" 
 Disp "2. Basic Calculations"
 Disp "3. Unit 2 Calculations"
@@ -131,6 +154,8 @@ Disp "1. Checks"
 Disp "2. Z Intervals"
 Disp "3. Z Tests"
 Input "Enter Option: ",B
+If B=1
+Goto 
 
 "Checks"
 If B=1 
@@ -149,6 +174,7 @@ End
 If N≤(.1*I)
 Then
 Disp "True"
+End
 Else 
 Disp "False"
 End
@@ -162,6 +188,7 @@ End
 If (P*N≥10 and N*(1-P)≥10)
 Then
 Disp "True"
+End
 Else 
 Disp "False" 
 End
@@ -169,6 +196,7 @@ End
 "Z Intervals"
 If B=2
 Then
+Disp " "
 Disp "1: 1 Sample Proportion"
 Disp "2: 2 Sample Proportion"
 Input "Enter Option: ",C
@@ -321,21 +349,7 @@ End
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Lbl ZZ
 
 
 
