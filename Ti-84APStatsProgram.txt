@@ -197,6 +197,33 @@ Then
 Goto
 End
 
+"1 Sample SD"
+Lbl
+Disp " "
+Input "Enter Percentage: ",P
+Input "Enter SS: ",N
+(√((P*(1-P))/N))→E
+Disp "Standard Deviation: "
+Disp E
+Goto ZZ
+End
+
+"2 Sample SD"
+Lbl
+Input "Enter Per1: ",P
+Input "Enter SS1: ",N
+Input "Enter Per2: ",J
+Input "Enter SS2: ",M
+√(((P*(1-P))/N) + ((J*(1-J))/M))→D
+Disp "Standard Deviation: "
+Disp D
+Goto ZZ
+End
+
+
+
+
+
 
 "Checks"
 Lbl
@@ -394,6 +421,71 @@ Disp "Upper Bound: "
 Disp H+I
 End
 
+
+"Means"
+Lbl
+If A=7
+Then
+Disp " "
+Disp "1. Standard Deviation"
+Disp "2. CLT"
+Input "Enter Option: ",B
+
+If B=1
+Then
+Goto
+End
+If B=2 
+Then
+Goto
+End
+
+"Means Standard Deviation"
+Lbl
+Disp " "
+Disp "1. 10 Percent"
+Disp "2. 1 SD Sample"
+Disp "3. 2 SD Sample"
+Input "Enter Option: ",C
+
+If C=1
+Then
+Goto
+End
+
+If C=2
+Then
+Goto
+End
+
+If C=3
+Then
+Goto
+End
+
+Lbl
+"1 Sample Means"
+Disp " "
+Input "Enter SD: ",S
+Input "Enter SS: ",N
+(S/√N)→D
+Disp "SD: "
+Disp D
+Goto ZZ
+End
+
+Lbl
+"2 Sample Means"
+Disp " "
+Input "Enter SD1: ",S
+Input "Enter SS1: ",N
+Input "Enter SD2: ",J
+Input "Enter SS2: ",M
+√((S/N)+(J/M)) -> D
+Disp "SD: "
+Disp D
+Goto ZZ
+End
 
 
 
