@@ -42,24 +42,27 @@ Disp "9. Quit"
 
 Input "Enter Options: ",A
 
-
+Lbl 
 If A=1
 Then
 Disp "1. Create a List"
 Disp "2. Add to List"
 Disp "3. Remove from List"
-Disp "4. Sort List AscEnding"
-Disp "5. Sort List DescEnding"
+Disp "4. Sort List Ascending"
+Disp "5. Sort List Descending"
+Disp "6. Calc Z-Score"
 Disp "9. Back"
 End
 Input "Enter Option: ",B
 
+Lbl
 "Create a List"
 If B=1
 Then
 
 End
 
+Lbl
 "Add to List"
 If B=2
 Then 
@@ -67,11 +70,14 @@ Input "Enter Number: ",J
 augment(L1,{J})→L1
 End
 
+Lbl
 "Remove From List"
 If B=3
 Then
 End
 
+
+Lbl
 "Sort List Ascending"
 If B=4
 Then 
@@ -82,16 +88,19 @@ Disp "Done"
 
 End
 
+Lbl
 "Sort List Descending"
 If B=5
 Then 
 End
 
+Lbl
 "Return to Main Page"
 If B=9
 Then
 Goto A1 
 
+Lbl
 "SubMenu 1.2"
 Lbl A2
 If A=2
@@ -105,6 +114,7 @@ End
 
 Input "Enter Option: " , B
 
+Lbl
 "Find the Mean"
 If B=1
 Then 
@@ -112,6 +122,7 @@ Input "Enter List: ",L
 Mean(l)
 End
 
+Lbl
 "Find the SD"
 If B=2 
 Then
@@ -119,6 +130,7 @@ Input "Enter List: ",L
 Disp stdDev(l)
 End
 
+Lbl
 "Find the Variance"
 If B=3
 Then
@@ -126,6 +138,7 @@ Input "Enter List: ",L
 Disp variance(l)
 End
 
+Lbl
 "Mass Calculate"
 If B=4
 Then
@@ -133,6 +146,7 @@ Input "Enter List: ",L
 1-Var Stats l
 End
 
+Lbl
 "Return to Main Menu"
 If B=9
 Then
@@ -140,7 +154,7 @@ Goto P1
 End
 
 
-
+Lbl
 "Unit 2 Calculations"
 If A=3
 Then
@@ -148,16 +162,44 @@ Disp "1.
 End
 
 "Proportion Calculations"
+Lbl
 If A=6
 Then
 Disp "1. Checks"
-Disp "2. Z Intervals"
-Disp "3. Z Tests"
+Disp "2. SD"
+Disp "3. Z Intervals"
+Disp "4. Z Tests"
 Input "Enter Option: ",B
 If B=1
 Goto 
 
+Lbl
+"Standard Deviation"
+If B=2
+Then
+Disp "1. 10 Percent Condtion"
+Disp "2. 1 Sample SD"
+Disp "3. 2 Sample SD"
+Disp "9. Go Back"
+Input "Enter Option: ",C
+
+Lbl
+If C=1
+Then
+Goto
+End
+If C=2
+Then
+Goto
+End
+If C=3
+Then
+Goto
+End
+
+
 "Checks"
+Lbl
 If B=1 
 Then
 Disp "1: 10 Cond"
@@ -166,6 +208,7 @@ Input "Enter Option: ",C
 End
 
 "10 Percent"
+Lbl
 If C=1
 Then
 Input "Enter Population Size: ",I
@@ -180,6 +223,7 @@ Disp "False"
 End
 
 "Law of Large Counts"
+Lbl
 If C=2 
 Then
 Input "Enter Percentage: " ,P
@@ -194,14 +238,17 @@ Disp "False"
 End
 
 "Z Intervals"
-If B=2
+Lbl
+If B=3
 Then
 Disp " "
-Disp "1: 1 Sample Proportion"
-Disp "2: 2 Sample Proportion"
+Disp "1. 1 Sample Proportion"
+Disp "2. 2 Sample Proportion"
+Disp "9. Go Back"
 Input "Enter Option: ",C
 
 "**Test This Code**"
+Lbl
 "1 Sample Proportion"
 If C=1
 Then
@@ -274,6 +321,7 @@ End
 
 
 "Variables: q, p, r, n, m, h, i"
+Lbl
 If C=2
 Then
 Disp " "
