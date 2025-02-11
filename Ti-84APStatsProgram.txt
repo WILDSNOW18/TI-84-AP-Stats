@@ -446,6 +446,7 @@ Disp " "
 Disp "1. 10 Percent"
 Disp "2. 1 SD Sample"
 Disp "3. 2 SD Sample"
+Disp "4. CLT"
 Input "Enter Option: ",C
 
 If C=1
@@ -459,6 +460,11 @@ Goto
 End
 
 If C=3
+Then
+Goto
+End
+
+If C=4
 Then
 Goto
 End
@@ -487,7 +493,16 @@ Disp D
 Goto ZZ
 End
 
-
+"Central Limit Theorm"
+Disp " "
+Input "Enter SS: ",N
+If N≥30
+Then
+Disp "Approx Norm"
+End
+Else
+Disp "Not Norm"
+End
 
 Lbl ZZ
 
