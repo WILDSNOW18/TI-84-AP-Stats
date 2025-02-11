@@ -32,7 +32,7 @@ Lbl A1
 0→W
 Disp "1. List Functions" 
 Disp "2. Basic Calculations"
-Disp "3. Unit 2 Calculations"
+Disp "3. Probability"
 Disp "4. "
 Disp "5. "
 Disp "6. Proportions"
