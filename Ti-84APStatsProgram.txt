@@ -105,6 +105,7 @@ Lbl
 Lbl A2
 If A=2
 Then
+Disp " "
 Disp "1. Find the Mean"
 Disp "2. Find the SD"
 Disp "3. Find the Variance"
@@ -155,10 +156,15 @@ End
 
 
 Lbl
-"Unit 2 Calculations"
+"Probablility"
 If A=3
 Then
-Disp "1.
+Disp " "
+Disp "1. NormalCDF"
+Disp "2. Binomial Random Variables"
+Disp "3. BinomialCDF"
+Disp "4. Geometric Formulas"
+Input "Enter Option: ",B
 End
 
 "Proportion Calculations"
