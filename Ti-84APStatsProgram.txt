@@ -226,6 +226,51 @@ Then
 Goto
 End
 
+"Checks"
+Lbl
+If B=1 
+Then
+Disp "1: 10 Cond"
+Disp "2: LLC"
+Input "Enter Option: ",C
+End
+
+"10 Percent"
+Lbl
+If C=1
+Then
+Input "Enter Population Size: ",I
+Input "Enter Sample Size: " ,N
+End
+If N≤(.1*I)
+Then
+Disp "True"
+End
+Else 
+Disp "False"
+End
+
+"Law of Large Counts"
+Lbl
+If C=2 
+Then
+Input "Enter Percentage: " ,P
+Input "Enter Sample Size: ",N
+End
+If (P*N≥10 and N*(1-P)≥10)
+Then
+Disp "True"
+End
+Else 
+Disp "False" 
+End
+
+
+
+
+
+
+
 Lbl
 "Standard Deviation"
 If B=2
@@ -278,44 +323,7 @@ End
 
 
 
-"Checks"
-Lbl
-If B=1 
-Then
-Disp "1: 10 Cond"
-Disp "2: LLC"
-Input "Enter Option: ",C
-End
 
-"10 Percent"
-Lbl
-If C=1
-Then
-Input "Enter Population Size: ",I
-Input "Enter Sample Size: " ,N
-End
-If N≤(.1*I)
-Then
-Disp "True"
-End
-Else 
-Disp "False"
-End
-
-"Law of Large Counts"
-Lbl
-If C=2 
-Then
-Input "Enter Percentage: " ,P
-Input "Enter Sample Size: ",N
-End
-If (P*N≥10 and N*(1-P)≥10)
-Then
-Disp "True"
-End
-Else 
-Disp "False" 
-End
 
 "Z Intervals"
 Lbl
@@ -324,6 +332,8 @@ Then
 Disp " "
 Disp "1. 1 Sample Proportion"
 Disp "2. 2 Sample Proportion"
+Disp "3. Calculate M.E."
+Disp "4. Calculate SS"
 Disp "9. Go Back"
 Input "Enter Option: ",C
 
@@ -473,6 +483,41 @@ Disp H-I
 Disp "Upper Bound: "
 Disp H+I
 End
+
+
+"C=3"
+"Determine M.E."
+Lbl
+Disp " "
+Input "Enter Confidence: ",Q
+Input "Enter Percentage: ",P
+Input "Enter SS: ",N
+Q*(sqrt((P*(1-P))/N)->H
+Disp "M.E.: "
+Disp H
+Goto ZZ
+End
+
+"C=4"
+"Determine Sample Size"
+Lbl
+Disp " "
+Input "Enter Confidence: ",Q
+Input "Enter Percentage: ",P
+Input "Enter M.E.: ",M
+(P*(1-P)/((M/Q)^2)->H
+Disp "Sample Size: "
+Disp H
+Goto ZZ
+End
+
+
+
+
+
+
+
+
 
 
 "Means"
