@@ -320,11 +320,6 @@ End
 
 
 
-
-
-
-
-
 "Z Intervals"
 Lbl
 If B=3
@@ -336,6 +331,27 @@ Disp "3. Calculate M.E."
 Disp "4. Calculate SS"
 Disp "9. Go Back"
 Input "Enter Option: ",C
+
+If C=1
+Then
+Goto
+End
+If C=2
+Then
+Goto
+End
+If C=3
+Then
+Goto
+End
+If C=4
+Then
+Goto
+End
+If C=9
+Then
+Goto
+End
 
 "**Test This Code**"
 Lbl
@@ -476,6 +492,8 @@ Lbl P3
 P-J→H
 R*(√(((P*(1-P))/N)+((J*(1-J))/M)))→I
 
+Disp "P.E.: "
+Disp H
 Disp "M.E.: "
 Disp I
 Disp "Lower Bound: "
@@ -585,7 +603,7 @@ Input "Enter SD1: ",S
 Input "Enter SS1: ",N
 Input "Enter SD2: ",J
 Input "Enter SS2: ",M
-√((S/N)+(J/M)) -> D
+√((S/N)+(J/M))→D
 Disp "SD: "
 Disp D
 Goto ZZ
