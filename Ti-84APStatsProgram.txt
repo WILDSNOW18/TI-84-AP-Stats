@@ -33,14 +33,55 @@ Lbl A1
 Disp "1. List Functions" 
 Disp "2. Basic Calculations"
 Disp "3. Probability"
-Disp "4. "
-Disp "5. "
-Disp "6. Proportions"
-Disp "7. Means"
-Disp "8. Next Page"
-Disp "9. Quit"
+Disp "4. Proportions"
+Disp "5. Means"
+Disp "6. Chi Squared"
+Disp "7. Slope"
+Disp "8. Quit"
+
 
 Input "Enter Options: ",A
+If A=1
+Then
+Goto
+End
+
+If A=2
+Then
+Goto
+End
+
+If A=3
+Then
+Goto
+End
+
+If A=4
+Then
+Goto
+End
+
+If A=5
+Then
+Goto
+End
+
+If A=6
+Then
+Goto
+End
+
+If A=7
+Then
+Goto
+End
+
+If A=8
+Then
+Goto
+End
+
+
 
 Lbl 
 If A=1
@@ -51,9 +92,48 @@ Disp "3. Remove from List"
 Disp "4. Sort List Ascending"
 Disp "5. Sort List Descending"
 Disp "6. Calc Z-Score"
-Disp "9. Back"
+Disp "8. Back"
 End
 Input "Enter Option: ",B
+
+If B=1
+Then
+Goto
+End
+
+If B=2
+Then
+Goto
+End
+
+If B=3
+Then
+Goto
+End
+
+If B=4
+Then
+Goto
+End
+
+If B=5
+Then
+Goto
+End
+
+If B=6
+Then
+Goto
+End
+
+If B=8
+Then
+Goto
+End
+
+
+
+
 
 Lbl
 "Create a List"
@@ -94,11 +174,6 @@ If B=5
 Then 
 End
 
-Lbl
-"Return to Main Page"
-If B=9
-Then
-Goto A1 
 
 Lbl
 "SubMenu 1.2"
@@ -113,8 +188,27 @@ Disp "4. Mass Calculate"
 Disp "9. Back"
 End
 
-Input "Enter Option: " , B
+Input "Enter Option: ",B
 
+If B=1
+Then
+Goto
+End
+
+If B=2
+Then
+Goto
+End
+
+If B=3
+Then
+Goto
+End
+
+If B=4
+Then
+Goto
+End
 Lbl
 "Find the Mean"
 If B=1
@@ -196,8 +290,6 @@ End
 
 "Proportion Calculations"
 Lbl
-If A=6
-Then
 Disp "1. Checks"
 Disp "2. SD"
 Disp "3. Z Intervals"
@@ -221,7 +313,7 @@ If B=4
 Then
 Goto
 End
-If B=9
+If B=8
 Then
 Goto
 End
@@ -232,13 +324,25 @@ If B=1
 Then
 Disp "1: 10 Cond"
 Disp "2: LLC"
+Disp "8. Go Back"
 Input "Enter Option: ",C
+End
+
+If C=1
+Then
+Goto
+End
+If C=2
+Then
+Goto
+End
+If C=8
+Then
+Goto
 End
 
 "10 Percent"
 Lbl
-If C=1
-Then
 Input "Enter Population Size: ",I
 Input "Enter Sample Size: " ,N
 End
@@ -252,8 +356,6 @@ End
 
 "Law of Large Counts"
 Lbl
-If C=2 
-Then
 Input "Enter Percentage: " ,P
 Input "Enter Sample Size: ",N
 End
@@ -278,7 +380,7 @@ Then
 Disp "1. 10 Percent Condtion"
 Disp "2. 1 Sample SD"
 Disp "3. 2 Sample SD"
-Disp "9. Back"
+Disp "8. Go Back"
 Input "Enter Option: ",C
 
 Lbl
@@ -291,6 +393,10 @@ Then
 Goto
 End
 If C=3
+Then
+Goto
+End
+If C=8
 Then
 Goto
 End
@@ -329,7 +435,7 @@ Disp "1. 1 Sample Proportion"
 Disp "2. 2 Sample Proportion"
 Disp "3. Calculate M.E."
 Disp "4. Calculate SS"
-Disp "9. Go Back"
+Disp "8. Go Back"
 Input "Enter Option: ",C
 
 If C=1
@@ -348,7 +454,7 @@ If C=4
 Then
 Goto
 End
-If C=9
+If C=8
 Then
 Goto
 End
@@ -423,6 +529,7 @@ Disp "Lower: "
 Disp P-E
 Disp "Upper: "
 Disp P+E
+Goto ZZ
 End
 
 
@@ -500,6 +607,7 @@ Disp "Lower Bound: "
 Disp H-I
 Disp "Upper Bound: "
 Disp H+I
+Goto ZZ
 End
 
 
@@ -563,6 +671,7 @@ Disp "1. 10 Percent"
 Disp "2. 1 SD Sample"
 Disp "3. 2 SD Sample"
 Disp "4. CLT"
+Disp "8. Go Back"
 Input "Enter Option: ",C
 
 If C=1
@@ -581,6 +690,11 @@ Goto
 End
 
 If C=4
+Then
+Goto
+End
+
+If C=8
 Then
 Goto
 End
@@ -609,6 +723,7 @@ Disp D
 Goto ZZ
 End
 
+Lbl
 "Central Limit Theorm"
 Disp " "
 Input "Enter SS: ",N
@@ -620,7 +735,47 @@ Else
 Disp "Not Norm"
 End
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Lbl ZZ
+
 
 
 
