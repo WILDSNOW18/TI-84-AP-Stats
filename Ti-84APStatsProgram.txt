@@ -1,7 +1,7 @@
 "Variable usage: A-First Menu Option | B-Second Menu Option | C-Third Menu Option | D-Generic Answer | E-| F-| G-| H-| I-Population Size | J-Proportions Variable | K-| L-Lists| m-| n-Sample Size | o- | p-Percentage| q-Confidence 1 | r-confidence 2 |"
 "!!Can't use Z as a variable"
 "Output uses a columns to rows, with each character taking up one space"
-"Copy and Past in Find and Replace → √ ≤ ≥ ≠"
+"Copy and Past in Find and Replace → √ ≤ ≥ ≠ L₁"
 
 
 
@@ -147,7 +147,7 @@ Lbl
 If B=2
 Then 
 Input "Enter Number: ",J
-augment(L1,{J})→L1
+augment(L₁,{J})→L₁
 End
 
 Lbl
@@ -775,6 +775,7 @@ End
 
 
 Lbl ZZ
+Disp " "
 Disp "0. Run Again"
 Disp "1. End Program"
 Input "Enter Option: ",Z
