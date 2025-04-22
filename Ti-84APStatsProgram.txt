@@ -137,8 +137,12 @@ End
 
 Lbl
 "Create a List"
-If B=1
-Then
+{ }→L₁
+Input "How Many Arguments: ", N
+ For(I,1,N)
+Input "Enter Number: ",X
+augment(L₁,{X})→L₁
+End
 
 End
 
