@@ -78,7 +78,7 @@ End
 
 If A=8
 Then
-Goto
+Goto ZP
 End
 
 
@@ -786,6 +786,11 @@ Input "Enter Option: ",Z
 While
 Z≠1
 Goto AA
+End
+Else
+Goto ZP
+End
 
+Lbl ZP
 
 
