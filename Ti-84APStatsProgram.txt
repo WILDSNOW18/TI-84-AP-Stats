@@ -128,7 +128,7 @@ End
 
 If B=8
 Then
-Goto
+Goto AA
 End
 
 
@@ -319,7 +319,7 @@ Goto
 End
 If B=8
 Then
-Goto
+Goto AA
 End
 
 "Checks"
