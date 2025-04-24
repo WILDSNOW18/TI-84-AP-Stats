@@ -1,0 +1,164 @@
+"Means"
+Lbl
+If A=7
+Then
+Disp " "
+Disp "1. Standard Deviation"
+Disp "2. Checks"
+Disp "3. Confidence Intervals"
+Disp "4.Significance Tests"
+Disp "8. Back"
+Input "Enter Option: ",B
+
+If B=1
+Then
+Goto
+End
+If B=2 
+Then
+Goto
+End
+If B=3
+Then
+Goto
+End
+If B=4
+Then
+Goto
+End
+If B=8 
+Then
+Goto AA
+End
+
+
+
+
+
+"Means Standard Deviation"
+Lbl
+Disp " "
+Disp "1. 10 Percent"
+Disp "2. 1 SD Sample"
+Disp "3. 2 SD Sample"
+Disp "4. CLT"
+Disp "8. Go Back"
+Input "Enter Option: ",C
+
+If C=1
+Then
+Goto
+End
+
+If C=2
+Then
+Goto
+End
+
+If C=3
+Then
+Goto
+End
+
+If C=4
+Then
+Goto
+End
+
+If C=8
+Then
+Goto
+End
+
+Lbl
+"1 Sample Means"
+Disp " "
+Input "Enter SD: ",S
+Input "Enter SS: ",N
+(S/√N)→D
+Disp "SD: "
+Disp D
+Goto ZZ
+End
+
+Lbl
+"2 Sample Means"
+Disp " "
+Input "Enter SD1: ",S
+Input "Enter SS1: ",N
+Input "Enter SD2: ",J
+Input "Enter SS2: ",M
+√((S/N)+(J/M))→D
+Disp "SD: "
+Disp D
+Goto ZZ
+End
+
+Lbl
+"Central Limit Theorm"
+Disp " "
+Input "Enter SS: ",N
+If N≥30
+Then
+Disp "Approx Norm"
+End
+Else
+Disp "Not Norm"
+End
+
+
+
+
+
+Lbl
+"Checks"
+Disp " "
+Disp "1. Random"
+Disp "2. 10 Percent Condition"
+Disp "3. Normal"
+Disp "8. Go Back"
+Input "Enter Option: ",C
+
+If C=1
+Then
+Goto
+End
+If C=2
+Then
+Goto
+End
+If C=3
+Then
+Goto
+End
+If C=8
+Then
+Goto
+End
+
+Lbl
+"Random"
+Disp "Is it a Random Sample"
+Goto
+End
+
+Lbl
+"10 Percent"
+Input "Enter Population Size: ",I
+Input "Enter Sample Size: " ,N
+End
+If N≤(.1*I)
+Then
+Disp "True"
+End
+Else 
+Disp "False"
+Goto
+End
+
+
+Lbl
+"Normal"
+Disp "If Graph is Normal || SS≥30 || No Unusual Features == Normal"
+Goto
+End
