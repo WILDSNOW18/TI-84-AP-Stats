@@ -20,4 +20,15 @@ Proportions
 
 Means
 
-  
+Chi Squared
+  < > 1 sided
+  != 2 sided
+  Conditions
+    Random
+    10% Condition
+    Large Sample
+      CLT, no strong skew, borth pops normal
+Line Regression
+  T-Interval
+      b +- T* *SEb
+      t = b-B /SEb
