@@ -178,6 +178,36 @@ Then
 Goto
 End
 
+Lbl
+"Confidence Interval Mean Difference"
+",i,j,k,l,m,n,o,p,q,r,s,t"
+Input "Mean: ",H
+Input "SD: ",I
+Input "Number of Observations: ",N
+Input "Significance Level: ",S
+
+N-1->M
+invT(S,M)->T
+T*(I/sqrt(N))->Q
+
+
+Disp "M.E."
+Disp Q
+Disp "Lower: "
+Disp H-Q
+Disp "Upper: "
+Disp H+Q
+
+
+
+
+
+
+
+
+
+
+
 Lbl 
 "Variables: q, p, r, n, m, h, i, J, K, L, O, S, T, U, V, W"
 "2 Sample T Interval"
