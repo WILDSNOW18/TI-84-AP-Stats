@@ -1,0 +1,78 @@
+Main Menu
+  Quit
+List Menu
+  Create A List
+  Add to List
+  Remove From List
+  Sort List Ascending
+  Sort List Descending
+  Calc Z Score
+Basic Calc Menu
+  Find the Mean
+  Find the SD
+  Find the Variance
+  Mass Calculate
+Probability Menu
+   Basic Probability
+  Binomial Random Variables
+  Binomial CDF
+  Geometric Formulas
+Proportions Menu
+  Checks
+    10 Cond
+    LLC
+  SD
+    10 Cond
+    1 Sample SD
+    2 Sample SD
+  Z Interval
+    1 Sample Proportions
+    2 Sample Proportions
+    Calculate M.E.
+    Calculate SS
+  Z Tests
+    1 Sample Z Test
+    2 Sample Z Test
+Means Menu
+  Checks
+    10% Condition
+    CLT
+  T Interval
+    1 Sample T Interval
+    2 Sample T Interval
+  T Tests
+    one sample t test
+    paired t test
+    two sample t test
+
+Chi Squared Menu
+  GOF Test
+    Checks
+      10% 
+    GOF Test
+  Homogeneity Test
+    Checks
+      10%
+    Homogeneity Test
+  Independence
+    Checks
+      10 %
+  Independence test 
+Slope Menu
+  Checks
+    10 Cond
+  T interval for slope
+  T test for slope
+
+
+
+
+
+Menu("Stats Program",
+"List Functions", AB
+"Basic Calculations",AC
+"Probability",AD
+"Proprotions,"AE
+"Means",AF
+"Chi Squared",AG
+"Slope",AH)
