@@ -1,0 +1,7 @@
+Menu("Menu Title","Item A",A,"Item B",B,"Quit",C
+Lbl A
+Disp "1"
+Lbl B
+Disp "2"
+Lbl C
+Disp "3"
