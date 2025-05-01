@@ -11,11 +11,6 @@ Probability
 Power and Types of Errors
 
 Proportions
-  Sample Intervals
-      Add code to display mean for 2 sample intervals
-
-   Z Tests for 1 Sample
-    Left Center or Right
   Z Tests for 2 Samples
      Left Center or Right
      Use P combined formula for 2 samples when p1 = p2
@@ -23,10 +18,7 @@ Proportions
 
 Means
   Confidence Interval (x dar +- t* * s/sqrt(n)
-    Checks
-      Random
-      10%
-      CLT, or Normal, or no unusual features
+    
 
 Confidence interval difference in means
   
@@ -46,6 +38,7 @@ Chi Squared
     10% Condition
     Large Sample
       CLT, no strong skew, borth pops normal
+
 Line Regression
   T-Interval
       b +- T* *SEb
