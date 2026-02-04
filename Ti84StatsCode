@@ -1,0 +1,1919 @@
+"Dont Use Var Y!!"
+Lbl AA
+ClrHome
+0→A:0→B:0→C:0→D:0→E:0→F
+0→G:0→H:0→I:0→J:0→K:0→L
+0→M:0→N:0→O:0→P:0→Q:0→R
+0→S:0→T:0→U:0→V:0→W:0→X
+0→Y:0→Z
+
+Menu("AP Stats Code","List Functions",AB,"Basic Calculatoins",AC,"Probability",AD,"Proportions",AE,"Means",AF,"Chi Squared",AG,"Slope",AH,"About",AI,"Quit",ZP)
+
+Lbl AB
+Menu("List Functions: Under Construction","Create a List",BA,"Add to List",BB,"Remove from List",BC,"Sort List Ascending",BD,"Sort List Descending",BE,"Back",AA
+
+Lbl BA
+Disp "Create a List"
+DelVar L
+Input "How Many Arguments: ",N
+For(I,1,N)
+Input "Enter Number: ",X
+augment(⌊L,{X})
+End
+Goto BG
+
+Lbl BB
+Disp "Add to List"
+Input "Enter Number: ",J
+augment(⌊L,{J})
+End
+Goto AA
+
+!!Lbl BC
+Disp "Remove from List"
+
+
+Lbl BD
+Disp "Sort List Ascending:
+Input "Enter List: ",K
+SortA(⌊K)
+Disp "Sorted"
+Wait 2
+Goto BG
+
+Lbl BE
+Disp "Sort List Descending"
+Input "Enter List: ",L
+SortD(⌊L)
+Disp "Sorted"
+Wait 2
+Goto BG
+
+Lbl BG
+"Picks which List to Store Created or Edited List"
+Disp "Which List would you like it stored in"
+Disp "1. List 1"
+Disp "2. List 2"
+Disp "3. List 3"
+Disp "4. List 4"
+Disp "5. List 5"
+Disp "6. List 6"
+Disp "7. Don't Store"
+Input "Enter Option: ",A
+If A=1
+Then
+ClrList L₁
+⌊L→L₁
+Goto AA
+End
+If A=2
+Then
+ClrList L₂
+⌊L→L₂
+Goto AA
+End
+If A=3
+Then
+ClrList L₃
+⌊L→L₃
+Goto AA
+End
+If A=4
+Then
+ClrList L₄
+⌊L→L₄
+Goto AA
+End
+If A=5
+Then
+ClrList L₅
+⌊L→L₅
+Goto AA
+End
+If A=6
+Then
+ClrList L₆
+⌊L→L₆
+Goto AA
+End
+If A=7
+Then
+Goto AA
+End
+
+
+
+Lbl AC
+Menu("Basic Calculations","Find Mean",CA,"Find the SD",CB,"Find the Variance",CC,"Mass Calculate",CD,"1.5 IQR",CE,"Calc Z-Score",CF,"Back",AA)
+
+Lbl CA
+Disp "Find Mean"
+Input "Enter List: ",K
+Disp "Mean: "
+Disp Mean(⌊K)
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+
+
+Lbl CB
+Disp "Find the SD"
+Input "Enter List: ",K
+Disp "SD: "
+Disp stdDev(⌊K)
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+
+
+Lbl CC
+Disp "Find the Variance"
+Input "Enter List: ",K
+Disp variance(⌊K)
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl CD
+Disp "Mass Calculate"
+Input "Enter List: ",K
+1-Var Stats ⌊K
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl CE
+Input "Enter Q1: ",Q
+Input "Enter Q2: ",R
+Input "Enter Outlier: ",O
+Q-(1.5*(R-Q)→W
+W+(1.5*(R-Q)→U
+If O<W
+Then
+Disp "Low Outlier" 
+Goto CZ
+End
+If O>U
+Then
+Disp "High Outlier"
+Goto CZ
+Else
+Disp "Not Outlier"
+Goto CZ
+
+Lbl CZ
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl CF
+Disp "Calc Z-Score"
+Input "Enter Value Test: ",T
+Input "Enter Mean: ",M
+Input "Enter SD: ",S
+((T-M)/S)→Z
+Disp "Z-Score: ",Z
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+
+Lbl AD
+Menu("Probabylity","Combining Random Variables",DA,"Basic Probability",DB,"Binomials",DC,"Geometric Fromula",DD,"Back",AA)
+
+Lbl DA
+Menu("Combining Random Variables","+",DE,"-",DF,"Back",AD)
+
+Lbl DE
+Disp "+"
+Input "Mean 1: ",E
+Input "SD 1: ",J
+Input "Mean 2: ",F
+Input "SD 2: ",K
+Disp "New Mean: ",(E+F)
+Disp "New SD: ",√(((J)^2)+((K)^2))
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DF
+Disp "-"
+Input "Mean 1: ",E
+Input "SD 1: ",J
+Input "Mean 2: ",F
+Input "SD 2: ",K
+Disp "New Mean: ",(E-F)
+Disp "New SD: ",√(((J)^2)+((K)^2))
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DB
+Menu("Basic Probability","General X Rule",DG,"Or",DH,"Conditional Prob-P(A|B)",DI,"Back",AD)
+
+Lbl DG
+Disp "General X Rule"
+Input "Probability A: ",A
+Input "Probability B: ",B
+Input "Probability A And B",C
+A*(C/B)→D
+Disp "Prob A And B",D
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DH
+Disp "Or"
+Input "Probability A: ",A
+Input "Probability B: ",B
+Input "Probability A And B: ",C
+Disp "Prob (A||B): ",((A+B)-C)
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DI
+Disp "Conditional Prob-P(A|B)"
+Input "Probability B: ",B
+Input "Probability A And B: ",C
+C/B→D
+Disp "Prob A Given B: ",D
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DC
+Menu("Binomials","Success Exactly",DJ,"Success At Most",DK,"Success At Least",DL,"Back",AD)
+
+Lbl DJ
+Disp "BinomProb-ExactSuccess"
+Input "Number of Trials: ",N
+Input "Prob of Success: ",P
+Input "Number of Success: ",M
+binompdf(N,P,M)→B
+Disp "Prob of Exact: ",B
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DK
+Disp "BinomProb-AtMostSuccess"
+Input "Number of Trials: ",N
+Input "Prob of Success: ",P
+Input "Number of Success: ",M
+binomcdf(N,P,M)→B
+Disp "Prob of At Most: ",B
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DL
+Disp "BinomProb-AtLeastSuccess"
+Input "Number of Trials: ",N
+Input "Prob of Success: ",P
+Input "Number of Success: ",M
+1-(binomcdf(N,P,(M-1))→B
+Disp "Prob of At Least: ",B
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DD
+Menu("Geometric Formula","Prob At Most",DM,"Prob At Least",DN,"Prob = To",DO,"Back",AD)
+
+Lbl DM
+Disp "Geo At Most"
+Input "Probability of Success: ",P
+Input "Number of Trials: ",N
+geometcdf(P,N)→T
+Disp "Prob of At Most: ",T
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DN
+Disp "Geo At Least"
+Input "Probability of Success: ",P
+Input "Number of Trials: ",N
+1-(geometcdf(P,N))→T
+Disp "Prob of At Most: ",T
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl DO
+Disp "Geo = To"
+Input "Probability of Success: ",P
+Input "Number of Trials: ",N
+geometpdf(P,N)→T
+Disp "Prob of At Most: ",T
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+
+Lbl AE
+Menu("Proportions","Checks",EA,"SD",EB,"Z Intervals",EC,"Z Tests",ED,"Back",AA)
+
+Lbl EA
+Menu("Checks","10 Cond",IA,"LLC",IB,"Back",AE)
+
+Lbl IA
+Disp "10 Cond"
+Input "Enter Population Size: ",I
+Input "Enter Sample Size: ",N
+
+If N≤(.1*I)
+Then
+Disp "True"
+Goto ZZ
+Else 
+Disp "False"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl IB
+Disp "Law of Large Counts"
+Input "Enter Percentage: " ,P
+Input "Enter Sample Size: ",N
+If (P*N≥10 and N*(1-P)≥10)
+Then
+Disp "True"
+Goto ZZ
+Else 
+Disp "False" 
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl EB
+Menu("Standard Deviation of Proportions","10 Cond",IA,"1 Sample SD",JA,"2 Sample SD",JB,"Back",AE)
+
+Lbl JA
+Disp "1 Sample SD Proportions"
+Disp " "
+Input "Enter Percentage: ",P
+Input "Enter SS: ",N
+(√((P*(1-P))/N))→E
+Disp "Standard Deviation: "
+Disp E
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl JB
+Disp "2 Sample SD Proportions"
+Disp " "
+Input "Enter Per1: ",P
+Input "Enter SS1: ",N
+Input "Enter Per2: ",J
+Input "Enter SS2: ",M
+√(((P*(1-P))/N) + ((J*(1-J))/M))→D
+Disp "Standard Deviation: "
+Disp D
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl EC
+"Z Intervals"
+Menu("Z-Intervals","1 Sample Proportion",KA,"2 Sample Proportion",KB,"Calculate M.E.",KC,"Calculate SS",KD,"Cheater's Notes",KE,"Back",AA)
+
+Lbl KA
+Disp "1 Sample Proportion Interval"
+Disp " "
+Input "Enter Con Level: ",Q
+Input "Enter Percentage: ",P
+Input "Enter Sample Size: ",N
+End
+If Q=0.50
+Then 
+0.674→R
+Goto P2
+End
+If Q=0.6
+Then
+0.841→R
+Goto P2
+End
+If Q=0.7
+Then
+1.035→R
+Goto P2
+End
+If Q=0.8
+Then
+1.282→R
+Goto P2
+End
+If Q=0.9
+Then
+1.645→R
+Goto r
+End
+If Q=0.95
+Then
+1.96→R
+Goto P2
+End
+If Q=0.96
+Then
+2.054→R
+Goto P2
+End
+If Q=0.98
+Then
+2.326→R
+Goto P2
+End
+If Q=0.99 
+Then 
+2.576→R
+Goto P2
+End
+If Q=0.999
+Then 
+3.291→R
+Goto P2
+End
+
+Lbl P2
+(R*√(P*(1-P)/N)→E
+
+Disp "M.E."
+Disp E
+Disp "Lower: "
+Disp P-E
+Disp "Upper: "
+Disp P+E
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl KB
+Disp "2 Sample Proportion Interval"
+Disp " "
+Input "Enter Con Level: ",Q
+Input "Enter Percent P1: ",P
+Input "Enter SS P1: ",N
+Input "Enter Percent P2: ",J
+Input "Enter SS P2: ",M
+
+If Q=0.50
+Then 
+0.674→R
+Goto P3
+End
+If Q=0.6
+Then
+0.841→R
+Goto P3
+End
+If Q=0.7
+Then
+1.035→R
+Goto P3
+End
+If Q=0.8
+Then
+1.282→R
+Goto P3
+End
+If Q=0.9
+Then
+1.645→R
+Goto P3
+End
+If Q=0.95
+Then
+1.96→R
+Goto P3
+End
+If Q=0.96
+Then
+2.054→R
+Goto P3
+End
+If Q=0.98
+Then
+2.326→R
+Goto P3
+End
+If Q=0.99 
+Then 
+2.576→R
+Goto P3
+End
+If Q=0.999
+Then 
+3.291→R
+Goto P3
+End
+Lbl P3
+P-J→H
+R*(√(((P*(1-P))/N)+((J*(1-J))/M)))→I
+Disp "P.E.: "
+Disp H
+Disp "M.E.: "
+Disp I
+Disp "Lower Bound: "
+Disp H-I
+Disp "Upper Bound: "
+Disp H+I
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl KC
+Disp "Determine M.E."
+Disp " "
+Input "Enter Confidence: ",Q
+Input "Enter Percentage: ",P
+Input "Enter SS: ",N
+Q*(sqrt((P*(1-P))/N)→H
+Disp "M.E.: "
+Disp H
+Goto ZZ
+End
+
+Lbl KD
+Disp "Determine Sample Size Proportions"
+Disp " "
+Input "Enter Confidence: ",Q
+Input "Enter Percentage: ",P
+Input "Enter M.E.: ",M
+(P*(1-P)/((M/Q)^2)→H
+Disp "Sample Size: "
+Disp H
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl KE
+Menu("Cheater's Notes: Z Intervals","Margin of Error",KM,"4C for Prop",KN,"4C Method Diff of Props",KO,"Back",EC)
+
+Lbl KM
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+Output(1,1,"Margin of Error Notes:")
+If P=1
+Then
+Output(2,1,"When Confidence Increases")
+Output(3,3,"M.E. Increases")
+Output(4,3,"Wider Interval")
+Output(6,1,"When N Increases")
+Output(7,3,"M.E. Decreases")
+Output(8,3,"Narrower Interval")
+End
+If P=2
+Then 
+Output(3,1,"Margin of Error = Z*SD")
+Output(5,1,"Z=Confidence Lvl Table A")
+Output(7,1,"SD=√((p*(1-p))/n)")
+End
+If P=3
+Then
+Output(3,1,"Shortcuts:")
+Output(4,3,"Notes Home")
+Output(4,24,"3")
+Output(5,3,"Proportions Home")
+Output(5,24,"4")
+End
+Output(10,1,"↑↓ Scroll CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P              
+If P<1:3→P
+If P>3:1→P
+If K=94:Goto KE
+If K=82:Goto AE
+End
+ClrHome
+Goto KE
+
+Lbl KN
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+Output(1,1,"4C Z-Interval Notes")
+If P=1
+Then
+Output(3,1,"Choose: 1-Samp Z-Int")
+Output(5,1,"Checks:")
+Output(6,1,"   Random")
+Output(7,1,"   10% Condition")
+Output(8,1,"   Large Counts")
+End
+If P=2
+Then
+Output(3,1,"Calculate: w/ calc")
+Output(5,1,"Conclude:")
+Output(6,3,"We are _% confident the")
+Output(7,3,"interval from _ to _")
+Output(8,3,"captures true prop of...")
+End
+If P=3
+Then
+Output(3,1,"Shortcuts:")
+Output(4,3,"Checks")
+Output(4,24,"1")
+Output(5,3,"Calculate")
+Output(5,24,"2")
+Output(6,3,"Notes Home")
+Output(6,24,"3")
+Output(7,3,"Proportions Home")
+Output(7,24,"4")
+End
+Output(10,1,"↑↓ Scroll  CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P
+If P<1:3→P
+If P>3:1→P
+If K=92:Goto EA
+If K=93:Goto AE
+If K=94:Goto KE
+If K=82:Goto AE
+End
+ClrHome
+Goto KE
+
+Lbl KO
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+Output(1,1,"4C Diff Prop Notes")
+If P=1
+Then
+Output(3,1,"Choose: 2-Samp Z-Int")
+Output(5,1,"Check: (On Both Props)")
+Output(6,1,"   Random")
+Output(7,1,"   10% Condition")
+Output(8,1,"   Large Counts")
+End
+If P=2
+Then
+Output(3,1,"Conclude:")
+Output(4,1,"   We are _% confident")
+Output(5,1,"   interval captures true")
+Output(6,1,"   diff in proportions")
+End
+If P=3
+Then
+Output(3,1,"If Interval (+,+): 1>2")
+Output(4,1,"If Interval (-,-): 2>1")
+Output(5,1,"If Interval (-,+): ")
+Output(6,4,"No Evidence for 1 || 2")
+End
+If P=4
+Then
+Output(3,1,"Shortcuts:")
+Output(4,3,"Checks")
+Output(4,24,"1")
+Output(5,3,"Calculate")
+Output(5,24,"2")
+Output(6,3,"Notes Home")
+Output(6,24,"3")
+Output(7,3,"Proportions Home")
+Output(7,24,"4")
+End
+Output(10,1,"↑↓ Scroll CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P
+If P<1:4→P
+If P>4:1→P
+If K=92:Goto EA
+If K=93:Goto AE
+If K=94:Goto KE
+If K=82:Goto AE
+End
+ClrHome
+Goto KE
+
+Lbl ED
+"Z-Tests"
+Menu("Z-Tests","1 Prop Z Test",QA,"2 Prop Z Test",QB,"Cheater's Notes",QC,"Back",AE)
+
+Lbl QA
+Menu("1 Prop: Which Direction","Right Tailed Test (S<H)",QX,"Left Tailed Test (S>H)",QY,"Two-Tailed Test (S!=H)",QZ,"Back",ED)
+
+Lbl QX
+Disp "1 Prop Right Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto Q1
+Else
+Goto Q1
+End
+Lbl Q1
+Input "Enter Sample Proporiton: ",B
+Input "Enter Claimed Proportion: ",C
+Input "Enter Sample Size: ",N
+round(C,3)
+(B-C)/√((C*(1-C))/N)→Z
+normalcdf(Z,199)→P
+Disp "Z Statistic: "
+Disp Z
+Disp "P Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl QY
+Disp "Left Tailed Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto Q2
+Else
+Goto Q2
+End
+Lbl Q2
+Input "Enter Sample Proporiton: ",B
+Input "Enter Claimed Proportion: ",C
+Input "Enter Sample Size: ",N
+round(C,3)
+(B-C)/√((C*(1-C))/N)→Z
+normalcdf(-199,Z)→P
+Disp "Z Statistic: "
+Disp Z
+Disp "P Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl QZ
+Disp "Two-Tailed Tests"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto Q3
+Else
+Goto Q3
+End
+Lbl Q3
+Input "Enter Sample Proporiton: ",B
+Input "Enter Claimed Proportion: ",C
+Input "Enter Sample Size: ",N
+round(C,3)
+(B-C)/√((C*(1-C))/N)→Z
+2*(normalcdf(abs(Z),199))→P
+Disp "Z Statistic: "
+Disp Z
+Disp "P Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl QB
+Menu("2 Proportion Z-Tests","Right Tailed Test (S1>S2)",R1,"Left Tailed Test (S1<S2)",R2,"Two Tailed Test S1!=S2",R3,"Back",ED)
+
+Lbl R1
+Disp "Right Tailed Test (S1>S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+ClrHome
+Disp "Right Tailed Test (S1>S2)"
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto R0
+Else
+Goto R0
+End
+Lbl R0
+Input "1st Sample Prop: ",J
+Input "1st Sample Size: ",N
+Input "2nd Sample Prop: ",O
+Input "2nd Sample Size: ",M
+(J+O)/(N+M)→S
+√(S(1-S)((1/N)+(1+M)))→T
+((J-O)/T)→Z
+normalcdf(Z,199)→P
+Disp " "
+Disp "Z Statistic: ",Z
+Disp "P Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl R2
+Disp "Left Tailed Test (S1<S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+ClrHome
+Disp "Left Tailed Test (S1<S2)"
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto R9
+Else
+Goto R9
+End
+Lbl R9
+Input "1st Sample Prop: ",J
+Input "1st Sample Size: ",N
+Input "2nd Sample Prop: ",O
+Input "2nd Sample Size: ",M
+(J-O)/√(((J+O)/(M+N))(1-((J+O)/(M+N)))((1/N)+(1/M)))→Z
+normalcdf(­199,Z)→P
+Disp " "
+Disp "Z Statistic: ",Z
+Disp "P Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl R3
+Disp "Two-Tailed Test (S1!=S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+ClrHome
+Disp "Two-Tailed Test (S1!=S2)"
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto R8
+Else
+Goto R8
+End
+Lbl R8
+Input "1st Sample Success: ",J
+Input "1st Sample Size: ",N
+Input "2nd Sample Success: ",O
+Input "2nd Sample Size: ",M
+((J/N)-(O/M))/√(((J+O)/(M+N))(1-((J+O)/(M+N)))((1/N)+(1/M)))→Z
+2*(normalcdf(­199,Z))→P
+
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+
+
+Lbl QC
+Menu("Cheaters Notes: Z Tests","1 Prop Z Sig Test",C1,"2 Prop Z Sig Test",C2,"Error Types & Power",C3,"Back",ED)
+
+Lbl C1
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+If P=1
+Then
+Output(1,1,"1 Prop Z Sig Test Notes:")
+Output(2,1,"Null Hypotheses:")
+Output(3,3,"P = Null Value")
+Output(5,1,"Alternative Hypotheses:")
+Output(6,1,"P < Null Value (One Sided)")
+Output(7,1,"P > Null Value (One Sided)")
+Output(8,1,"P!= Null Value (Two Sided)")
+End
+If P=2
+Then
+Output(1,1,"4C Method for Inference")
+Output(2,1,"Choose:")
+Output(3,1,"Procedure:1-Sample Z-Test for P")
+Output(4,1,"Alpha: a = 0.05")
+Output(5,1,"Parameter:")
+Output(6,3,"P=True Proportion of _")
+Output(7,1,"Statistic:=True/Total")
+Output(8,1,"Hypotheses: Last Page")
+End
+If P=3
+Then
+Output(1,1,"4C Method for Inference")
+Output(3,1,"Checks:")
+Output(4,3,"Random")
+Output(5,3,"10% Condition")
+Output(6,3,"Large Counts")
+Output(8,1,"Calculate: w/ Calc")
+End
+If P=4
+Then
+Output(1,1,"4C Method for Inference")
+Output(3,1,"Interpret P-Value:")
+Output(5,3,"Assuming Null is true")
+Output(6,3,"(p=_),then the prob of")
+Output(7,3,"getting a  of _ ")
+Output(8,3,"purely by chance is _%")
+End
+If P=5
+Then
+Output(1,1,"4C Method for Inference")
+Output(3,1,"Conclude: ")
+Output(4,3,"Because (Hypothesis)")
+Output(5,3,"we (do/don't) have ")
+Output(6,3,"convincing evidence")
+Output(7,3,"to support _")
+End
+If P=6
+Then
+Output(2,1,"Shortcuts:")
+Output(4,3,"Checks")
+Output(4,24,"1")
+Output(5,3,"Calculate")
+Output(5,24,"2")
+Output(6,3,"Notes Home"
+Output(6,24,"3")
+Output(7,3,"Z-Tests Home")
+Output(7,24,"4")
+End
+Output(10,1,"↑↓ Scroll CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P
+If P<1:6→P
+If P>6:1→P
+If K=92:Goto EA
+If K=93:Goto QA
+If K=94:Goto QC
+If K=82:Goto ED
+End
+ClrHome
+Goto QC
+
+Lbl C2
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+If P=1
+Then
+Output(1,1,"2 Prop Sig Test Notes")
+Output(2,1,"Null Hypotheses:")
+Output(3,3,"P1-P2=0 | P1=P2")
+Output(5,1,"Alternative Hypotheses:")
+Output(6,3,"P1-P2<0 | P1 < P2")
+Output(7,3,"P1-P2>0 | P1 > P2")
+Output(8,3,"P1-P2!=0 | P1 != P2")
+End
+If P=2
+Then
+Output(1,1,"4C Method Diff Prop)
+Output(2,1,"Choose:")
+Output(3,1,"Procedure:2-Sample Z-Test for P1-P2")
+Output(4,1,"Alpha: 0.05")
+Output(5,1,"Parameter: ")
+Output(6,3,"P1-P2=True Prop of _")
+Output(7,1,"Statsistic:₁-₂=_")
+Output(8,1,"Hypotheses: Last Page")
+End
+If P=3
+Then
+Output(1,1,"4C Method Diff Prop")
+Output(3,1,"Checks (Both Samples):")
+Output(4,3,"Random")
+Output(5,3,"10% Condition")
+Output(6,3,"Large Counts")
+Output(8,1,"Calculate: w/ Calc")
+End
+If P=4
+Then
+Output(1,1,"4C Method Diff Prop")
+Output(2,1,"Interpret: ")
+Output(3,3,"Assuming null is true ")
+Output(4,3,"(p1-p2=0) there is a")
+Output(5,3,"(p-val) prob of getting ")
+Output(6,3,"a ₁-₂ of _ or more ")
+Output(7,3,"by chance")
+End
+If P=5
+Then
+Output(1,1,"4C Method Diff Prop")
+Output(2,1,"Conclude: ")
+Output(3,3,"Because (P-Val > || < a)")
+Output(4,3,"we (reject || !reject)")
+Output(5,3,"null and (do || don't)")
+Output(6,3,"have convincing evidence ")
+Output(7,3,"for alt hype (context)")
+End
+If P=6
+Then
+Output(1,1,"2 Prop Z Sig Test Notes")
+Output(,1,"Shortcuts:")
+Output(4,3,"Checks")
+Output(4,24,"1")
+Output(5,3,"Calculate")
+Output(5,24,"2")
+Output(6,3,"Notes Home"
+Output(6,24,"3")
+Output(7,3,"Z-Tests Home")
+Output(7,24,"4")
+End
+Output(10,1,"↑↓ Scroll CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P
+If P<1:6→P
+If P>6:1→P
+If K=92:Goto EA
+If K=93:Goto QB
+If K=94:Goto QC
+If K=82:Goto ED
+End
+ClrHome
+Goto QC
+
+Lbl C3
+ClrHome
+1→P
+Repeat K=45
+ClrHome
+Output(1,1,"Error Types & Power Notes")
+If P=1
+Then
+Output(2,7,"|Reject H0|")
+Output(4,1,"H0 True")
+Output(4,14,"Type 1 Error")
+Output(5,1,"H0 False(Ha)")
+Output(5,14,"Power")
+Output(7,1,"P(Type I Error) = Alpha")
+End
+If P=2
+Then
+Output(2,4,"|Fail to Reject H0|")
+Output(4,1,"H0 True")
+Output(4,14,":-)")
+Output(5,1,"H0 False(Ha)")
+Output(5,14,"Type II Error")
+Output(7,1,"P(Type II Error) = 1-Power")
+End
+If P=3
+Then
+Output(2,1,"Type I Error")
+Output(3,3,"The null hypothesis")
+Output(4,3,"(context) is true, but ")
+Output(5,3,"we find convincing ")
+Output(6,3,"evidence for Ha context")
+End
+If P=4
+Then
+Output(2,1,"Type II Error")
+Output(3,3,"The alternative 
+Output(4,3,"hypothesis (context) is ")
+Output(5,3,"true,but we don't find ")
+Output(6,3,"convincingevidence for ")
+Output(7,3,"Ha (context)")
+End
+If P=5
+Then
+Output(2,10,"|Power|")
+Output(3,2,"P(reject H0|Ha is true)")
+Output(4,3,"'If Ha is true (value in")
+Output(5,4,"context),there is a ")
+Output(6,4,"(power) prob of")
+Output(7,4,"finding convincing")
+Output(8,4,"evidence to reject HA'")
+
+End
+If P=6
+Then
+Output(2,4,"|To Increase Power|")
+Output(3,3,"Increase Sample Size")
+Output(4,3,"Increase Alpha")
+Output(5,3,"Increase distance to Ha")
+End
+If P=7
+Then
+Output(2,1,"Shortcuts:")
+Output(4,3,"Notes Home"
+Output(4,24,"3")
+Output(5,3,"Z-Tests Home")
+Output(5,24,"4")
+End
+Output(10,1,"↑↓ Scroll CLEAR=Back")
+0→K
+Repeat K
+getKey→K
+End
+If K=105 or K=34:P+1→P
+If K=25:P-1→P
+If P<1:7→P
+If P>7:1→P
+If K=94:Goto QC
+If K=82:Goto ED
+End
+ClrHome
+Goto QC
+
+
+
+
+
+
+
+
+
+Lbl AF
+Menu("Means","Checks",FA,"Standard Deviation",FB,"Confidence Intervals",FC,"Significance Tests",FD,"Back",AA)
+
+Lbl FA
+Menu("Mean Checks","10 Cond",IA,"Back",AF)
+
+Lbl FB
+Menu("Means Standard Deviation","10 Cond",IA,"1 SD Sample",LA,"2 SD Sample",LB,"CLT",LC,"Back",AF)
+
+Lbl LA
+Disp "1 Sample SD Means"
+Input "Enter SD: ",S
+Input "Enter SS: ",N
+(S/√N)→D
+Disp "SD: "
+Disp D
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl LB
+Disp "2 Sample SD Means"
+Input "Enter SD1: ",S
+Input "Enter SS1: ",N
+Input "Enter SD2: ",J
+Input "Enter SS2: ",M
+√((S/N)+(J/M))→D
+Disp "SD: "
+Disp D
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl LC
+Disp "CLT"
+Input "Enter SS: ",N
+If N≥30
+Then
+Disp "Approx Norm"
+Goto ZZ
+Else
+Disp "Not Norm"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+"T-Intervals"
+Lbl FC
+Menu("Mean Confidence Intervals","1 Sample T Interval",MA,"2 Sample T Interval Mean Diff",MB,"2 Sample T Interval Diff Mean",MC,"Back",AF)
+
+Lbl MA
+Disp "1 Sample T Interval"
+Input "Mean: ",H
+Input "SD: ",I
+Input "Number of Observations: ",N
+Input "Significance Level: ",S
+N-1→M
+invT(S,M)→T
+T*(I/√(N))→Q
+Disp "M.E."
+Disp Q
+Disp "Lower: "
+Disp H-Q
+Disp "Upper: "
+Disp H+Q
+Goto ZZ
+Lbl MC
+Disp "2 Sample T Interval Diff Means"
+Input "Mean 1: ",Q
+Input "SD 1: ",P
+Input "Number 1: ",R
+Input "Mean 2: ",N
+Input "SD 2: ",M
+Input "Number 2: ",H
+Input "Significance Level: ",S
+R-1→K
+H-1→L
+If K≤L
+Then
+invT(S,K)→T
+Goto 1M
+If L<K
+Then
+invT(S,L)→T
+Goto 1M
+Lbl 1M
+Q-N->I
+T*(√(((P^2)/R) +((M^2)/H)))→J
+
+Disp "P.E.: "
+Disp I
+Disp "Lower Bound: "
+Disp I-J
+Disp "Upper Bound: "
+Disp I+J
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl FD
+Menu("T-Tests","1-Sample T-Tests",TA,"2-Sample T-Tests",TB,"1-Sample Mean Diff",TC,"Back",AA)
+
+Lbl TA
+Menu("1-Sample T-Tests","Right Tailed T-Test (S>H)",TX,"Left Tailed T-Test (S<H)",TY,"Two Tailed T-Test (S!=H)",TZ,"Back",FD)
+
+Lbl TX
+Disp "Right Tailed T-Test (S>H)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T1
+Else
+Goto T1
+Lbl T1
+ClrHome
+Disp "Right Tailed T-Test (S>H)"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+Input "Population Mean: ",I
+(H-I)/(M/(√(N))→T
+tcdf(T,199,N-1)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TY
+Disp "Left Tailed T-Test (S<H)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T2
+Else
+Goto T2
+Lbl T2
+ClrHome
+Disp "Left Tailed T-Test (S<H)"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+Input "Population Mean: ",I
+(H-I)/(M/(√(N))→T
+tcdf(­199,T,N-1)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Goto ZZ
+
+Lbl TZ
+Disp "Two Tailed T-Test (S!=H)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T3
+Else
+Goto T3
+Lbl T3
+ClrHome
+Disp "Two Tailed T-Test (S!=H)"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+Input "Population Mean: ",I
+(H-I)/(M/(√(N))→T
+2*(tcdf(abs(T),199,N-1))→P
+Disp "T-Score: ",­T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TB
+Menu("2-Sample T-Tests","Right Tailed Test (S1>S2)",TF,"Left Tailed Test (S1<S2)",TG,"Two Tailed Test (S1!=S2)",TH,"Back",FD)
+
+Lbl TF
+Disp "Right Tailed Test (S1>S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T0
+End
+Else
+Goto T0
+End
+Lbl T0
+ClrHome
+Disp "Right Tailed Test (S1>S2)"
+Input "Sample 1 Mean: ",Q
+Input "Sample 1 SD: ",R
+Input "Sample 1 Number: ",N
+Input "Sample 2 Mean: ",U
+Input "Sample 2 SD: ",V
+Input "Sample 2 Number: ",M
+√(((((N-1)*R^2)+((M-1)*V^2))/(N+M-2)))→S
+(Q-U)/(S*√((1/N)+(1/M))→T
+
+tcdf(T,199,(N+M-2))→P
+Disp " "
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+End
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TG
+Disp "Left Tailed Test (S1<S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T9
+End
+Else
+Goto T9
+End
+Lbl T9
+ClrHome
+Disp "Left Tailed Test (S1<S2)"
+Input "Sample 1 Mean: ",Q
+Input "Sample 1 SD: ",S
+Input "Sample 1 Number: ",N
+Input "Sample 2 Mean: ",U
+Input "Sample 2 SD: ",V
+Input "Sample 2 Number: ",M
+(((N-1)*(S^2))+((M-1)*(V^2)))/(N+M-2)→Z
+√(Z)→W
+(Q-U)/(W*√(1/N+1/M))→T
+N+M-2→D
+tcdf(­199,T,D)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TH
+Disp "Two Tailed Test (S1!=S2)"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T8
+End
+Else
+Goto T8
+End
+Lbl T8
+ClrHome
+Disp "Two Tailed Test (S1!=S2)"
+Input "Sample 1 Mean: ",Q
+Input "Sample 1 SD: ",S
+Input "Sample 1 Number: ",N
+Input "Sample 2 Mean: ",U
+Input "Sample 2 SD: ",V
+Input "Sample 2 Number: ",M
+(((N-1)*(S^2))+((M-1)*(V^2)))/(N+M-2)→Z
+√(Z)→W
+(Q-U)/(W*√(1/N+1/M))→T
+N+M-2→D
+2*(tcdf(­199,­abs(T),D)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TC
+Menu("1-Sample Mean Diff","Right Tailed T-Test (S>H)",TH,"Left Tailed T-Test (S<H)",TI,"Two Tailed T-Test (S!=H)",TJ,"Back",FD)
+
+Lbl TH
+Disp "Right Tailed T-Test (S>H)"
+Disp "Subtract: M1-M2"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T4
+Else
+Goto T4
+Lbl T4
+ClrHome
+Disp "Right Tailed T-Test (S>H)"
+Disp "Subtract: M1-M2"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+0→I
+(H-I)/(M/(√(N))→T
+tcdf(T,199,N-1)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TI
+Disp "Left Tailed T-Test (S<H)"
+Disp "Subtract: M1-M2"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T5
+Else
+Goto T5
+Lbl T5
+ClrHome
+Disp "Left Tailed T-Test (S<H)"
+Disp "Subtract: M1-M2"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+0→I
+(H-I)/(M/(√(N))→T
+tcdf(­199,T,N-1)→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl TJ
+Disp "Two Tailed T-Test (S!=H)"
+Disp "Subtract: M1-M2"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto T6
+Else
+Goto T6
+Lbl T6
+ClrHome
+Disp "Two Tailed T-Test (S!=H)"
+Disp "Subtract: M1-M2"
+Input "Sample Mean: ",H
+Input "Sample SD: ",M
+Input "Sample Size: ",N
+0→I
+(H-I)/(M/(√(N))→T
+2*(tcdf(abs(T),199,N-1))→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl AG
+Menu("Chi Squared","GoF Test",GA,"Homogenety",GB,"Independence",GC,"Back",AA)
+
+Lbl GA
+Disp "GoF Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto G1
+Else
+Goto G1
+Lbl G1
+ClrHome
+Disp "GoF Test"
+Input "Chi² Value: ",C
+Input "Num Categories: ",N
+χ²cdf(C,199,(N-1))→T
+Disp "Chi²: ",T
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl AH
+Menu("Slope","Confidence Intervals",HA,"Significance Tests",HB,"Back",AA)
+
+Lbl HA
+Input "Slope (B): ",B
+Input "Standard Error B (SEB): ",C
+Input "Significance Level: ",Q
+Input "Sample Size: ",N
+invT(Q,(N-2))→T
+(T*C)→M
+Disp "P.E.: ",B
+Disp "M.E.: ",M
+Disp "Lower Bound: ",(B-M)
+Disp "Upper Bound: ",(B+M)
+Disp " " 
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl HB
+Menu("Significance Tests Slope","Right Tailed Test",HC,"Left Tailed Test",HD,"Two Tailed Test",HE,"Back",AH)
+
+Lbl HC
+Disp "Right Slope Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto H1
+Else
+Goto H1
+Lbl H1
+ClrHome
+Disp "Right Slope Test"
+Input "Sample Slope: ",S
+Input "Population Slope: ",R
+Input "Standard Error B (SEB): ",C
+Input "Number of Points: ",N
+((S-R)/C)→T
+tcdf(T,199,(N-2))→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl HD
+Disp "Left Slope Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto H2
+Else
+Goto H2
+Lbl H2
+ClrHome
+Disp "Left Slope Test"
+Input "Sample Slope: ",S
+Input "Population Slope: ",R
+Input "Standard Error B (SEB): ",C
+Input "Number of Points: ",N
+((S-R)/C)→T
+tcdf(­199,T,(N-2))→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+Lbl HE
+Disp "Two Tailed Slope Test"
+Disp "1. Test Significance Level"
+Disp "2. No Sig Test"
+Input "Enter Option: ",Q
+If Q=1
+Then
+Input "Significant Level: ",A
+Goto H3
+Else
+Goto H3
+Lbl H3
+ClrHome
+Disp "Two Tailed Slope Test"
+Input "Sample Slope: ",S
+Input "Population Slope: ",R
+Input "Standard Error B (SEB): ",C
+Input "Number of Points: ",N
+((S-R)/C)→T
+tcdf(abs(T),199,(N-2))→P
+Disp "T-Score: ",T
+Disp "P-Value: ",P
+If Q=1
+Then
+If P<A
+Disp "Reject Null: Statistically Significant"
+End
+If P>A
+Disp "Fail Reject Null"
+Disp "Press Down when Complete"
+Repeat getKey=34
+End
+Goto ZZ
+End
+
+
+Lbl AI
+Menu("About","About the Author",I1, "About the Program",I2,"Users Guide",I3,"Disclosure",I4,Back,AA)
+
+Lbl I1
+Disp "I hated my AP Stats class. But since everything was calculator based I could practice my programming skills, and learn a new language. I built this code to help future AP stats students to have everything you need for the test in one spot"
+Wait 5
+Goto AI
+End
+
+Lbl I2
+Disp "Ultimate Guide to AP Statistics"
+Disp "Has all the methods, and all the checks you will need to take the AP Test"
+Disp "Requires taking the AP Statistics class before use for basic terminology understanding"
+Wait 4
+Goto AI
+End
+
+Lbl I3
+Disp "Practice Practice Practice. Don't plan on understanding everything about this code in one go. It took me months of writing to fully get it, but here are some good notes."
+Disp "Cheaters notes will be under every section, with links to the other important pages"
+Disp "Invalid inputs will break the code, since it's so big, never press the goto when erroring, it takes forever to get to the error"
+Disp "Arichive the code so when your calc dies you don't loose it."
+
+
+Lbl I4
+Disp "Cheaters Guide to AP Stats, use at your own risk"
+Disp "Wildsnow18 is not responsible for any punishment you face for using this code on exams or homework"
+Wait 4
+Goto AI
+End
+
+Lbl ZZ
+Disp " "
+Disp "0. Run Again"
+Disp "1. End Program"
+Input "Enter Option: ",Z
+Disp " "
+While Z≠1
+Goto AA
+End
+
+Lbl ZP
+"GIT: WILDSNOW18 2025"
